@@ -5,6 +5,11 @@
     "branch": "v-15.0-yukawa"
  },
  {
+    "repository": "android_hardware_amlogic_tools_respacker",
+    "target_path": "hardware/amlogic/tools/respacker",
+    "remote": "lineage"
+ },
+ {
     "repository": "android_kernel_amlogic_yukawa",
     "target_path": "kernel/amlogic/yukawa"
  },

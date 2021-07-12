@@ -396,3 +396,7 @@ PRODUCT_COPY_FILES += \
 
 # Include Virtualization APEX
 $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk)
+
+# Logo
+PRODUCT_HOST_PACKAGES += \
+    res_packer
