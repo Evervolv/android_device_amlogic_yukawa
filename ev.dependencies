@@ -1,5 +1,10 @@
 [
  {
+    "repository": "android_external_u-boot",
+    "target_path": "external/u-boot",
+    "branch": "v-15.0-yukawa"
+ },
+ {
     "repository": "android_kernel_amlogic_yukawa",
     "target_path": "kernel/amlogic/yukawa"
  }
