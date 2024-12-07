@@ -1,4 +1,122 @@
+cc_prebuilt_library_shared {
+    name: "yukawa_libGLES_mali_dvalin_ion",
+    stem: "libGLES_mali",
+    owner: "arm",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "dvalin_ion/libGLES_mali_default_8a_32-p-r16p0gralloc1.so",
+            ],
+            shared_libs: [
+                "android.hardware.graphics.common@1.0",
+                "libz",
+                "libnativewindow",
+                "libc++",
+                "liblog",
+                "libm",
+                "libc",
+                "libdl",
+            ],
+            required: [
+                "yukawa_libGLES_mali_symlink32",
+                "yukawa_libGLES_mali_vulkan_symlink32",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "dvalin_ion/libGLES_mali_default_8a_64-p-r16p0gralloc1.so",
+            ],
+            shared_libs: [
+                "android.hardware.graphics.common@1.0",
+                "libz",
+                "libnativewindow",
+                "libc++",
+                "liblog",
+                "libm",
+                "libc",
+                "libdl",
+            ],
+            required: [
+                "yukawa_libGLES_mali_symlink64",
+                "yukawa_libGLES_mali_vulkan_symlink64",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
 
+cc_prebuilt_library_shared {
+    name: "yukawa_libGLES_mali_gondul_ion",
+    stem: "libGLES_mali",
+    owner: "arm",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "gondul_ion/libGLES_mali_default_8a_32-p-r16p0gralloc1.so",
+            ],
+            shared_libs: [
+                "android.hardware.graphics.common@1.0",
+                "libz",
+                "libnativewindow",
+                "libc++",
+                "liblog",
+                "libm",
+                "libc",
+                "libdl",
+            ],
+            required: [
+                "yukawa_libGLES_mali_symlink32",
+                "yukawa_libGLES_mali_vulkan_symlink32",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "gondul_ion/libGLES_mali_default_8a_64-p-r16p0gralloc1.so",
+            ],
+            shared_libs: [
+                "android.hardware.graphics.common@1.0",
+                "libz",
+                "libnativewindow",
+                "libc++",
+                "liblog",
+                "libm",
+                "libc",
+                "libdl",
+            ],
+            required: [
+                "yukawa_libGLES_mali_symlink64",
+                "yukawa_libGLES_mali_vulkan_symlink64",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "egl",
+    prefer: true,
+    soc_specific: true,
+}
+
+install_symlink {
+    name: "yukawa_libGLES_mali_symlink32",
+    soc_specific: true,
+    installed_location: "lib/libGLES_mali.so",
+    symlink_target: "egl/libGLES_mali.so",
+}
+
+install_symlink {
+    name: "yukawa_libGLES_mali_symlink64",
+    soc_specific: true,
+    installed_location: "lib64/libGLES_mali.so",
+    symlink_target: "egl/libGLES_mali.so",
+}
 
 install_symlink {
     name: "yukawa_libGLES_mali_vulkan_symlink32",
